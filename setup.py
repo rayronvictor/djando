@@ -10,10 +10,6 @@ setup(
 	license='MIT',
 	include_package_data=True,
 	packages=find_packages(),
-	package_dir={'djando': 'djando'},
-	package_data={
-		'djando': ['data']
-	},
 	scripts=['bin/djando'],
 	entry_points={
 		'console_scripts': [
