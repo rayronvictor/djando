@@ -87,7 +87,7 @@ if [ $# -gt 0 ]; then
             docker-compose exec \
                 -u djando \
                 "$APP_SERVICE" \
-                python "$@"
+                bash -c 'source venv/bin/activate && python "$@"' bash "$@"
         else
             djando_is_not_running
         fi
@@ -100,7 +100,7 @@ if [ $# -gt 0 ]; then
             docker-compose exec \
                 -u djando \
                 "$APP_SERVICE" \
-                python -m pip "$@"
+                bash -c 'source venv/bin/activate && pip "$@"' bash "$@"
         else
             djando_is_not_running
         fi
@@ -113,7 +113,7 @@ if [ $# -gt 0 ]; then
             docker-compose exec \
                 -u djando \
                 "$APP_SERVICE" \
-                django-admin "$@"
+                bash -c 'source venv/bin/activate && django-admin "$@"' bash "$@"
         else
             djando_is_not_running
         fi
@@ -126,7 +126,7 @@ if [ $# -gt 0 ]; then
             docker-compose exec \
                 -u djando \
                 "$APP_SERVICE" \
-                python manage.py "$@"
+                bash -c 'source venv/bin/activate && python manage.py"$@"' bash "$@"
         else
             djando_is_not_running
         fi
@@ -151,7 +151,7 @@ if [ $# -gt 0 ]; then
             docker-compose exec \
                 -u djando \
                 "$APP_SERVICE" \
-                bash
+                bash -c 'source venv/bin/activate && bash'
         else
             djando_is_not_running
         fi
@@ -163,7 +163,7 @@ if [ $# -gt 0 ]; then
         if [ "$EXEC" == "yes" ]; then
             docker-compose exec \
                 "$APP_SERVICE" \
-                bash
+                bash -c 'source venv/bin/activate && bash'
         else
             djando_is_not_running
         fi

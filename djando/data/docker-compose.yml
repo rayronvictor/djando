@@ -2,8 +2,8 @@ version: '3'
 services:
     django.test:
         build:
-            context: runtimes/3.9
-            dockerfile: runtimes/3.9/Dockerfile
+            context: ./runtimes/3.9
+            dockerfile: Dockerfile
             args:
                 WWWGROUP: '${WWWGROUP}'
                 WWWUSER: '${WWWUSER}'
