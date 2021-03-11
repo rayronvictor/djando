@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
 	name='djando',
-	version='0.1',
+	version='0.2',
 	description='Using Docker with Django made easy',
 	url='http://github.com/rayronvictor/djando',
 	author='Rayron Victor',
